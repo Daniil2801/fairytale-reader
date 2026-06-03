@@ -1,0 +1,17 @@
+{
+  "name": "fairytale-reader-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --watch index.js",
+    "generate": "npx tsx scripts/generate-story.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.4"
+  }
+}

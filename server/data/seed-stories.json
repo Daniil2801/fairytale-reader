@@ -1,0 +1,171 @@
+{
+  "updatedAt": "2026-06-02T16:54:26.012Z",
+  "stories": [
+    {
+      "id": "luna-firefly",
+      "title": "Luna and the Sleepy Fireflies",
+      "summary": "A gentle bunny helps tiny fireflies find their way home before bedtime.",
+      "content": [
+        "In a meadow painted silver by the moon, Luna the bunny twitched her pink nose at a flicker of gold.",
+        "\"Hello?\" she whispered. Three fireflies blinked back, too tired to glow brightly.",
+        "\"We lost the path to Starflower Hill,\" buzzed the smallest one. \"Our lights are almost out.\"",
+        "Luna cupped her paws. \"Hold on to my ears. I know every root and pebble here.\"",
+        "They hopped past sleeping daisies and a brook that hummed a lullaby. With each step, the fireflies glowed a little warmer.",
+        "At the top of the hill, moonflowers opened like lanterns. \"Home!\" cheered the fireflies, circling Luna in a soft halo.",
+        "Luna yawned. \"Sweet dreams, little lights.\" And the whole meadow twinkled goodnight."
+      ],
+      "theme": "bedtime",
+      "ageMin": 3,
+      "ageMax": 7,
+      "readingMinutes": 4,
+      "createdAt": "2026-05-31T16:54:26.010Z",
+      "availableFrom": "2026-05-23T16:54:26.010Z",
+      "premiumOnly": false,
+      "coverEmoji": "🐰"
+    },
+    {
+      "id": "brave-teacup",
+      "title": "The Brave Little Teacup",
+      "summary": "A chipped teacup discovers that being different makes her perfect for a very special guest.",
+      "content": [
+        "In the corner of the china cupboard lived Pip, a teacup with a tiny golden crack shaped like a star.",
+        "When the queen visited the cottage, every cup straightened its handle. \"She will never choose me,\" thought Pip.",
+        "The queen's granddaughter tiptoed in. \"Grandma, may I have cocoa in the cup with the star?\"",
+        "Pip trembled as warm cocoa swirled inside. The crack did not leak — it shimmered like a constellation.",
+        "\"This cup holds extra kindness,\" said the queen, smiling. \"Just like you, my dear.\"",
+        "Pip learned that scars can be doorways for light. And every evening after, she was first on the shelf."
+      ],
+      "theme": "courage",
+      "ageMin": 4,
+      "ageMax": 8,
+      "readingMinutes": 5,
+      "createdAt": "2026-05-28T16:54:26.010Z",
+      "availableFrom": "2026-05-23T16:54:26.010Z",
+      "premiumOnly": false,
+      "coverEmoji": "☕"
+    },
+    {
+      "id": "cloud-painter",
+      "title": "Milo the Cloud Painter",
+      "summary": "A young dragon learns to paint rainbows that only appear when friends share them.",
+      "content": [
+        "High above Willow Valley, Milo practiced puffing shapes into clouds. His dragons always looked like potatoes.",
+        "\"Try painting with your heart,\" said Grandmother Dragon, tossing him a brush of sunbeam.",
+        "Milo painted a boat for the fisher-kids. A second brushstroke, and a friend added wings. Together the cloud-ship sailed across the sky.",
+        "The village pointed and laughed with delight. More children raised their brushes — every shared idea made the colors brighter.",
+        "That evening, a double rainbow arched from cloud to hill. \"You did not paint alone,\" Grandmother nodded.",
+        "Milo kept the sunbeam brush, but he never kept a picture to himself again."
+      ],
+      "theme": "friendship",
+      "ageMin": 5,
+      "ageMax": 9,
+      "readingMinutes": 6,
+      "createdAt": "2026-06-01T16:54:26.010Z",
+      "availableFrom": "2026-05-30T16:54:26.010Z",
+      "premiumOnly": false,
+      "coverEmoji": "🐉"
+    },
+    {
+      "id": "whispering-woods",
+      "title": "Secrets of the Whispering Woods",
+      "summary": "Two siblings follow musical leaves to help a forest spirit mend a broken song.",
+      "content": [
+        "The leaves did not rustle — they hummed. Emma and Noah followed the tune deeper than they had ever walked.",
+        "A spirit made of moss and moonlight sat beside a cracked harp. \"The song that keeps the woods safe has a missing note,\" she sighed.",
+        "Noah hummed the melody he knew from home. Emma tapped a rhythm on an oak root. The spirit plucked one string, then another.",
+        "When they sang together, fireflies spelled out a glowing note in the air. The harp mended itself with ivy and light.",
+        "The woods exhaled. \"You listened,\" said the spirit. \"That was the note we lost.\"",
+        "The children walked home with pockets full of humming leaves — reminders to always listen first."
+      ],
+      "theme": "nature",
+      "ageMin": 6,
+      "ageMax": 10,
+      "readingMinutes": 7,
+      "createdAt": "2026-06-02T16:54:26.010Z",
+      "availableFrom": "2026-06-02T16:54:26.010Z",
+      "premiumOnly": true,
+      "coverEmoji": "🌲"
+    },
+    {
+      "id": "star-baker",
+      "title": "The Star Baker of Comet Street",
+      "summary": "A fox baker shares midnight muffins that grant one wish — if you wish for someone else.",
+      "content": [
+        "Every Thursday at midnight, Fen the fox opened Comet Bakery. The sign read: \"One wish per muffin. Must be for another soul.\"",
+        "A grumpy badger wanted gold. The muffin stayed cold. A shy mouse wished her brother could speak at school — the muffin glowed cinnamon-sweet.",
+        "Fen whisked stardust into batter while the mouse's brother practiced brave words in the mirror. By morning, he raised his paw in class.",
+        "The badger returned, softer. \"Wish that the duckling who fell in the pond can swim,\" he mumbled. His muffin steamed at last.",
+        "Fen winked. \"The magic was always in your kindness.\" The badger left with flour on his nose and warmth in his chest."
+      ],
+      "theme": "kindness",
+      "ageMin": 5,
+      "ageMax": 9,
+      "readingMinutes": 6,
+      "createdAt": "2026-05-29T16:54:26.010Z",
+      "availableFrom": "2026-05-29T16:54:26.010Z",
+      "premiumOnly": true,
+      "coverEmoji": "🦊"
+    },
+    {
+      "id": "kite-kingdom",
+      "title": "The Kite That Remembered the Wind",
+      "summary": "An old kite teaches a child how memories can lift us on the stillest days.",
+      "content": [
+        "The attic kite was patched with maps and ticket stubs. \"I used to dance,\" it sighed when Aria found it.",
+        "Her grandfather had flown it across three countries. Together they mended a torn wing with stories instead of tape.",
+        "On a windless afternoon, Aria ran anyway, whispering every tale Grandpa had told. The kite trembled, then rose — steady as breath.",
+        "Neighbors looked up. Children cheered. The kite pulled not against the air, but against every remembered laugh.",
+        "Grandpa watched from the porch, eyes bright. \"The wind was always inside you,\" he said.",
+        "That night Aria hung the kite above her bed, still humming with invisible breeze."
+      ],
+      "theme": "adventure",
+      "ageMin": 6,
+      "ageMax": 11,
+      "readingMinutes": 7,
+      "createdAt": "2026-05-27T16:54:26.010Z",
+      "availableFrom": "2026-05-27T16:54:26.010Z",
+      "premiumOnly": true,
+      "coverEmoji": "🪁"
+    },
+    {
+      "id": "moon-bridge",
+      "title": "The Moon Bridge",
+      "summary": "Friends build a bridge of dreams to reunite a lonely lighthouse and the sea.",
+      "content": [
+        "The lighthouse had not winked at the waves in years. Sailors worried. Marina and Jules decided to visit at dream-time.",
+        "They stacked pillows, counted to three, and stepped into a silver fog. Moon planks appeared under their feet.",
+        "The lighthouse keeper was a cloud in a coat. \"I forgot the sea's lullaby,\" he admitted. Jules hummed. Marina tapped the railing in rhythm.",
+        "Waves answered from below, climbing the melody like stairs. Light burst across the water — one long, joyful blink.",
+        "Morning came. Real ships cheered as the beam returned. Marina and Jules shared pancakes, sleepy and proud."
+      ],
+      "theme": "friendship",
+      "ageMin": 5,
+      "ageMax": 10,
+      "readingMinutes": 6,
+      "createdAt": "2026-05-30T16:54:26.010Z",
+      "availableFrom": "2026-05-30T16:54:26.010Z",
+      "premiumOnly": true,
+      "coverEmoji": "🌙"
+    },
+    {
+      "id": "garden-guardian",
+      "title": "The Garden Guardian's Promise",
+      "summary": "A stone gnome wakes to protect seedlings — and learns that growing takes patience.",
+      "content": [
+        "At dawn the garden gnome stretched granite toes. Spring had arrived overnight; hundreds of sprouts needed encouragement.",
+        "He tried to pull a sunflower taller. It drooped. He shaded strawberries with his hat. They ripened slowly, perfectly sweet.",
+        "A snail named Dot taught him to count raindrops instead of minutes. \"Growing is quiet work,\" she said.",
+        "Weeks later, children picnicked among blooms. The gnome smiled, mossy cheeks pink. He had not made plants hurry — he had made them safe.",
+        "That night he promised the moon: \"I will guard patience, not just petals.\" The moon promised to shine a little longer for him."
+      ],
+      "theme": "nature",
+      "ageMin": 4,
+      "ageMax": 8,
+      "readingMinutes": 5,
+      "createdAt": "2026-06-02T16:54:26.010Z",
+      "availableFrom": "2026-06-04T16:54:26.010Z",
+      "premiumOnly": false,
+      "coverEmoji": "🧚"
+    }
+  ]
+}
