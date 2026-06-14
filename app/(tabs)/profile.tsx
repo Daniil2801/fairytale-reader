@@ -8,6 +8,31 @@ import { FairytaleTheme } from '@/constants/Theme';
 import { useApp } from '@/context/AppContext';
 import { formatWeekReset } from '@/lib/dates';
 
+import { getProfile } from '@/src/api/user.api';
+import type { UserProfile } from '@/types/user';
+
+import { useEffect, useState } from 'react';
+import {
+  Alert,
+  TextInput,
+} from 'react-native';
+
+import {
+  login,
+  register,
+} from '@/src/api/auth.api';
+
+import {
+  getToken,
+  removeToken,
+  saveToken,
+} from '@/src/services/authStorage';
+
+import {
+  getVoiceRate,
+  saveVoiceRate,
+} from "@/src/services/settingsStorage";
+
 export default function ProfileScreen() {
   const {
     entitlements,
@@ -23,10 +48,206 @@ export default function ProfileScreen() {
   } = useApp();
   const isPremium = entitlements.tier === 'premium';
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [isAuthenticated, setIsAuthenticated] =
+    useState(false);
+
+  const [profile, setProfile] =
+    useState<UserProfile | null>(null);
+
+  const [voiceRate, setVoiceRate] =
+    useState(1);
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
+  useEffect(() => {
+    loadVoiceSettings();
+  }, []);
+
+  async function loadVoiceSettings() {
+    const rate =
+      await getVoiceRate();
+
+    setVoiceRate(rate);
+  }
+
+  async function checkAuth() {
+    const token = await getToken();
+
+    const authenticated = !!token;
+
+    setIsAuthenticated(authenticated);
+
+    if (authenticated) {
+      await loadProfile();
+    }
+  }
+
+  async function handleLogin() {
+    try {
+      const result = await login(
+        email,
+        password
+      );
+
+      await saveToken(result.token);
+
+      setIsAuthenticated(true);
+
+      await loadProfile();
+
+      Alert.alert('Success', 'Logged in');
+      // window.alert('Success');
+    } catch (error) {
+      console.error(error);
+
+      Alert.alert(
+        'Error',
+        'Login failed'
+      );
+    }
+  }
+
+  async function handleRegister() {
+    try {
+      const result = await register(
+        email,
+        password
+      );
+
+      await saveToken(result.token);
+
+      setIsAuthenticated(true);
+
+      await loadProfile();
+
+      Alert.alert(
+        'Success',
+        'Account created'
+      );
+    } catch (error) {
+      console.error(error);
+
+      Alert.alert(
+        'Error',
+        'Registration failed'
+      );
+    }
+  }
+
+  async function loadProfile() {
+    try {
+      const data = await getProfile();
+
+      setProfile(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function handleLogout() {
+    await removeToken();
+
+    setProfile(null);
+
+    setIsAuthenticated(false);
+  }
+
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <ScrollView contentContainerStyle={styles.scroll}>
         <Text style={styles.title}>{ui('profile.title')}</Text>
+
+        <View style={styles.card}>
+          {!isAuthenticated ? (
+            <>
+              <Text style={styles.sectionTitle}>
+                Account
+              </Text>
+
+              <TextInput
+                placeholder="Email"
+                value={email}
+                onChangeText={setEmail}
+                style={styles.input}
+                autoCapitalize="none"
+              />
+
+              <TextInput
+                placeholder="Password"
+                value={password}
+                onChangeText={setPassword}
+                style={styles.input}
+                secureTextEntry
+              />
+
+              <Pressable
+                style={styles.primaryBtn}
+                onPress={handleLogin}
+              >
+                <Text style={styles.primaryBtnText}>
+                  Login
+                </Text>
+              </Pressable>
+
+              <Pressable
+                style={styles.secondaryBtn}
+                onPress={handleRegister}
+              >
+                <Text style={styles.secondaryBtnText}>
+                  Register
+                </Text>
+              </Pressable>
+            </>
+          ) : (
+            <>
+              <Text style={styles.sectionTitle}>
+                Logged in
+              </Text>
+
+              {profile && (
+                <>
+                  <Text style={styles.body}>
+                    Email: {profile.email}
+                  </Text>
+
+                  <Text style={styles.body}>
+                    Stories created:
+                    {" "}
+                    {profile._count.stories}
+                  </Text>
+
+                  <Text style={styles.body}>
+                    Stories left:
+                    {" "}
+                    {profile.freeStoriesLeft}
+                  </Text>
+
+                  <Text style={styles.body}>
+                    Plan:
+                    {" "}
+                    {profile.isPremium
+                      ? "Premium"
+                      : "Free"}
+                  </Text>
+                </>
+              )}
+
+              <Pressable
+                style={styles.secondaryBtn}
+                onPress={handleLogout}
+              >
+                <Text style={styles.secondaryBtnText}>
+                  Logout
+                </Text>
+              </Pressable>
+            </>
+          )}
+        </View>
 
         <View style={styles.card}>
           <Text style={styles.cardLabel}>{ui('profile.plan')}</Text>
@@ -68,6 +289,55 @@ export default function ProfileScreen() {
               onSelect={(code) => void setVoiceLanguage(code)}
             />
           )}
+
+            <View style={styles.card}>
+              <Text style={styles.sectionTitle}>
+                Voice Speed
+              </Text>
+
+              <View
+                style={{
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  gap: 8,
+                  marginTop: 12,
+                }}
+            >
+              {[0.75, 1, 1.25, 1.5].map(
+                rate => (
+                  <Pressable
+                    key={rate}
+                    onPress={async () => {
+                      setVoiceRate(rate);
+
+                      await saveVoiceRate(
+                        rate
+                      );
+                    }}
+                    style={{
+                      padding: 10,
+                      borderRadius: 10,
+                      backgroundColor:
+                        voiceRate === rate
+                          ? "#6B5AE0"
+                          : "#ddd",
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color:
+                          voiceRate === rate
+                            ? "white"
+                            : "black",
+                      }}
+                    >
+                      {rate}x
+                    </Text>
+                  </Pressable>
+                )
+              )}
+            </View>
+          </View>
         </View>
 
         {!isPremium && (
@@ -203,5 +473,29 @@ const styles = StyleSheet.create({
   devLabel: {
     fontSize: 15,
     color: FairytaleTheme.text,
+  },
+  input: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: FairytaleTheme.border,
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 12,
+    fontSize: 16,
+  },
+
+  secondaryBtn: {
+    borderWidth: 1,
+    borderColor: FairytaleTheme.primary,
+    borderRadius: 16,
+    padding: 16,
+    alignItems: 'center',
+    marginTop: 12,
+  },
+
+  secondaryBtnText: {
+    color: FairytaleTheme.primary,
+    fontSize: 16,
+    fontWeight: '700',
   },
 });
